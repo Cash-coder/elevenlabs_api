@@ -5,14 +5,6 @@ from elevenlabs.play import play
 from elevenlabs import save
 
 
-TEXT_FILEPATH = ""
-
-load_dotenv()
-
-elevenlabs = ElevenLabs(
-  api_key=os.getenv("ELEVENLABS_API_KEY"),
-)
-
 def get_text():
   base_dir = os.path.dirname(os.path.abspath(__file__))
   file_path = os.path.join(base_dir, 'text_to_convert.txt')
@@ -21,8 +13,14 @@ def get_text():
     return f.read()    
 
 
-text = get_text()
+def get_text():
+  base_dir = os.path.dirname(os.path.abspath(__file__))
+  file_path = os.path.join(base_dir, 'text_to_convert.txt')
 
+  with open(file_path, "r", encoding="utf-8") as f:
+
+
+text = get_text()
 filename = input("enter download file name ")
 
 audio = elevenlabs.text_to_speech.convert(
