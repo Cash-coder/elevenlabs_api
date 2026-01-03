@@ -23,12 +23,12 @@ client = ElevenLabs(
 )
 
 audio = client.text_to_speech.convert(
-    text=get_text(),
-    # voice_id="N2lVS1w4EtoT3dr4eOWO", #w40k
-    voice_id="EiNlNiXeDU1pqqOPrYMO",
-    # model_id="eleven_multilingual_v2",
-    model_id="eleven_flash_v2_5",
-    output_format="mp3_44100_128",
+  text=get_text(),
+  # voice_id="N2lVS1w4EtoT3dr4eOWO", #w40k
+  voice_id="EiNlNiXeDU1pqqOPrYMO",
+  # model_id="eleven_multilingual_v2",
+  model_id="eleven_flash_v2_5",
+  output_format="mp3_44100_128",
 )
 
 # play(audio)
